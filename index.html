@@ -10,6 +10,7 @@
   </head>
   <body>
     <div id="app" class="h-screen flex items-center justify-center bg-warmWhite">
+      <!--? Maybe make border color for the container so the calculator has some shape-->
       <div id="container" class="grid [border]-cozyBrown bg-warmWhite-dark w-auto justify-center display-grid align-items-center rounded-xl backdrop-opacity-15 shadow-2xl shadow-shadowBrown-medium">
         <div id="display" class="m-4 p-4 h-[157px] bg-warmWhite shadow-md shadow-shadowBrown-medium rounded-lg"></div>
       
@@ -44,8 +45,7 @@
         <div id="num-row-4" class="grid grid-cols-4 gap-3 p-3">
           <button id="point" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">.</button>
           <button id="0" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">0</button>
-          <!--TODO: fix the problem with the hover over svg to make it change theme when user hovers over box // maybe try placing svg straight into html without the need for the css file-->
-          <button id="theme" class="w-20 h-20 p-3 text-lg rounded-md bg-warmWhite hover:bg-cozyBrown shadow-md shadow-shadowBrown-medium bg-no-repeat bg-center"><div id="theme-svg" class="w-8 h-8 bg-center m-3"></div>          
+          <button id="theme" class="w-20 h-20 p-3 text-lg rounded-md bg-warmWhite hover:bg-cozyBrown shadow-md shadow-shadowBrown-medium bg-no-repeat bg-center"></button>          
           <button id="equals" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">=</button>
         </div>
       </div>
