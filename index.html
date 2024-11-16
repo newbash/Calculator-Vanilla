@@ -1,16 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./public/output.css" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link href="/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
     <script type="module" src="./main.js" defer></script>
     <title>Vanilla Calculator</title>
   </head>
   <body>
-    <div id="app" class="app">
-
+    <div id="app" class="h-screen flex items-center justify-center bg-warmWhite">
+      <div id="container" class="grid [border]-cozyBrown bg-warmWhite-dark w-auto justify-center display-grid align-items-center rounded-xl backdrop-opacity-15 shadow-2xl shadow-shadowBrown-medium">
+        <div id="display" class="m-4 p-4 h-[157px] bg-warmWhite shadow-md shadow-shadowBrown-medium rounded-lg"></div>
+      
+        <div id="cntrl-row" class="grid grid-cols-4 gap-3 p-3 align-items-center">
+          <button id="all-clear" class="w-20 h-20 p-3 text-3xl font-medium rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">AC</button>
+          <button id="clear" class="w-20 h-20 p-3 text-3xl font-medium rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">C</button>
+          <button id="history" class="w-20 h-20 p-3 rounded-md bg-warmWhite hover:bg-cozyBrown shadow-md shadow-shadowBrown-medium bg-no-repeat bg-center"></button>
+          <button id="divide" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">÷</button>
+        </div>
+      
+        <div id="num-row-1" class="grid grid-cols-4 gap-3 p-3">
+          <button id="1" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">1</button>
+          <button id="8" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">2</button>
+          <button id="9" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">3</button>
+          <button id="add" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">+</button>
+        </div>
+      
+        <div id="num-row-2" class="grid grid-cols-4 gap-3 p-3">
+          <button id="4" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">4</button>
+          <button id="5" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">5</button>
+          <button id="6" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">6</button>
+          <button id="sub" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">-</button>
+        </div>
+      
+        <div id="num-row-3" class="grid grid-cols-4 gap-3 p-3">  
+          <button id="7" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">7</button>
+          <button id="2" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">8</button>
+          <button id="3" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">9</button>
+          <button id="mul" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">×</button>
+        </div>
+      
+        <div id="num-row-4" class="grid grid-cols-4 gap-3 p-3">
+          <button id="point" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">.</button>
+          <button id="0" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">0</button>
+          <!--TODO: fix the problem with the hover over svg to make it change theme when user hovers over box // maybe try placing svg straight into html without the need for the css file-->
+          <button id="theme" class="w-20 h-20 p-3 text-lg rounded-md bg-warmWhite hover:bg-cozyBrown shadow-md shadow-shadowBrown-medium bg-no-repeat bg-center"><div id="theme-svg" class="w-8 h-8 bg-center m-3"></div>          
+          <button id="equals" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">=</button>
+        </div>
+      </div>
+      
     </div>
   </body>
 </html>
