@@ -10,41 +10,43 @@
   </head>
   <body>
     <div id="app" class="h-screen flex items-center justify-center bg-warmWhite">
-      <!--? Maybe make border color for the container so the calculator has some shape-->
       <div id="container" class="grid [border]-cozyBrown bg-warmWhite-dark w-auto justify-center display-grid align-items-center rounded-xl backdrop-opacity-15 shadow-2xl shadow-shadowBrown-medium">
-        <div id="display" class="m-4 p-4 h-[157px] bg-warmWhite shadow-md shadow-shadowBrown-medium rounded-lg"></div>
+        <div id="display" class="m-4 p-4 h-[157px] bg-warmWhite shadow-md shadow-shadowBrown-medium rounded-lg">
+          <div data-previous-operand id="previous-operan" class=""></div>
+          <div data-current-operand  id="current-operan" class=""></div>
+        </div>
       
         <div id="cntrl-row" class="grid grid-cols-4 gap-3 p-3 align-items-center">
-          <button id="all-clear" class="w-20 h-20 p-3 text-3xl font-medium rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">AC</button>
-          <button id="clear" class="w-20 h-20 p-3 text-3xl font-medium rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">C</button>
+          <button data-all-clear id="all-clear" class="w-20 h-20 p-3 text-3xl font-medium rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">AC</button>
+          <button data-delete id="clear" class="w-20 h-20 p-3 text-3xl font-medium rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">C</button>
           <button id="history" class="group w-20 h-20 p-3 rounded-md bg-warmWhite hover:bg-cozyBrown shadow-md shadow-shadowBrown-medium bg-no-repeat bg-center">
-          <button id="divide" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">÷</button>
+          <button data-operation id="divide" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">÷</button>
         </div>
       
         <div id="num-row-1" class="grid grid-cols-4 gap-3 p-3">
-          <button id="1" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">1</button>
-          <button id="8" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">2</button>
-          <button id="9" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">3</button>
+          <button data-number id="1" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">1</button>
+          <button data-number id="2" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">2</button>
+          <button data-number id="3" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">3</button>
           <button id="add" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">+</button>
         </div>
       
         <div id="num-row-2" class="grid grid-cols-4 gap-3 p-3">
-          <button id="4" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">4</button>
-          <button id="5" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">5</button>
-          <button id="6" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">6</button>
-          <button id="sub" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">-</button>
+          <button data-number id="4" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">4</button>
+          <button data-number id="5" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">5</button>
+          <button data-number id="6" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">6</button>
+          <button data-operation id="sub" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">-</button>
         </div>
       
         <div id="num-row-3" class="grid grid-cols-4 gap-3 p-3">  
-          <button id="7" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">7</button>
-          <button id="2" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">8</button>
-          <button id="3" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">9</button>
-          <button id="mul" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">×</button>
+          <button data-number id="7" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">7</button>
+          <button data-number id="8" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">8</button>
+          <button data-number id="9" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">9</button>
+          <button data-operation id="mul" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">×</button>
         </div>
       
         <div id="num-row-4" class="grid grid-cols-4 gap-3 p-3">
-          <button id="point" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">.</button>
-          <button id="0" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">0</button>
+          <button data-number id="point" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">.</button>
+          <button data-number id="0" class="w-20 h-20 p-3 text-2xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">0</button>
           <button id="theme" class="group w-20 h-20 p-3 text-lg rounded-md bg-warmWhite hover:bg-cozyBrown shadow-md shadow-shadowBrown-medium bg-no-repeat bg-center">
             <svg class="w-8 h-8 fill-cozyBrown group-hover:fill-warmWhite bg-center m-3" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 292.299 292.299" xml:space="preserve">
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -56,7 +58,7 @@
               </g>
             </svg>
           </button>          
-          <button id="equals" class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">=</button>
+          <button data-equals  class="w-20 h-20 p-3 text-3xl rounded-md bg-warmWhite text-cozyBrown hover:bg-cozyBrown hover:text-warmWhite shadow-md shadow-shadowBrown-medium">=</button>
         </div>
       </div>
       
